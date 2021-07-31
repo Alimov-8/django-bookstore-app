@@ -14,15 +14,23 @@
         
     • Custom User Forms
     • Custom User Admin
+    
     • Superuser ($ docker-compose exec web python manage.py createsuperuser)
+        A good way to confirm our custom user model is up and running properly is to create a superuser
+        account so we can log into the admin. This command will access CustomUserCreationForm under
+        the hood
+        
+    • Unit Tests
     
   #  
   ##### ✏️ Topics:
-    📌 
-    📌 
+    📌 Docker & Postgresql with Django
+    📌 Custom User Model
+    📌 Unit Tests
 
   
   # 
   ##### 📄 Summary:
-     ....
+     1. Bookstore project is now running with Docker and PostgreSQL and configured a
+        custom user model. 
  
