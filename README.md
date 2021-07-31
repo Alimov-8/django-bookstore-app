@@ -21,6 +21,14 @@
         the hood
         
     • Unit Tests
+        - Django co-founder Jacob Kaplan-Moss, “Code without tests is broken as designed.”
+
+ ### Unit Testing
+  ##### Django co-founder Jacob Kaplan-Moss, “Code without tests is broken as designed.”
+    Test Types:
+        1. Unit tests are small, fast, and isolated to a specific piece of functionality
+        2. Integration tests are large, slow, and used for testing an entire application or a user flow
+           like payment that covers multiple screens
     
   #  
   ##### ✏️ Topics:
