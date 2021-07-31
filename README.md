@@ -21,7 +21,7 @@
         the hood
         
     • Unit Tests
-        - Django co-founder Jacob Kaplan-Moss, “Code without tests is broken as designed.”
+        Testing Templates, Testing Creating User, Testing Creating Superuser
 
  ### Unit Testing
   ##### Django co-founder Jacob Kaplan-Moss, “Code without tests is broken as designed.”
