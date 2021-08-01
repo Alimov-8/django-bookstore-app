@@ -5,11 +5,6 @@ from django.test import TestCase
 
 class CustomUserTests(TestCase):
 
-    def test_signup_page_status_code(self):
-        response = self.client.get('/admin/')
-        self.assertEqual(response.status_code, 200)
-
-
     def test_create_user(self):
         User = get_user_model()
 
