@@ -5,6 +5,7 @@
     📌 Docker & Postgresql with Django
     📌 Custom User Model
     📌 Unit Tests
+    📌 User Registration
     📌 Summary
  #
  ### Getting Started
@@ -45,7 +46,15 @@
        • Testing HTML // response contains 'Homepage' ?
        • setUp Method // set response to target so no longer need to define a response variable for each test
        • Resolve // views check can do is that HomePageView “resolves” a given URL path
-
+       
+ #   
+ ### 2. User Registration
+  ##### ↪️ Commits:
+    • Auth App // Implementing log in and log out using Django’s own auth app
+    • Auth URLs and Views
+    • Homepage
+    • Log In, Logout, Redirects
+    • SignUp and Unit testing 
   
   # 
   ##### 📄 Summary:
@@ -54,5 +63,8 @@
         
      2. Configured templates and added the first page to project, a static homepage.
         Also added tests which should always be included with new code changes.
+        
+     3. Bookstore project is not the most beautiful site in the world, 
+        but it is very functional at this point.
    
  
