@@ -6,6 +6,7 @@
     📌 Custom User Model
     📌 Unit Tests
     📌 User Registration
+    📌 Static Assets
     📌 Summary
  #
  ### Getting Started
@@ -30,10 +31,11 @@
     • Unit Tests
         Testing Templates, Testing Creating User, Testing Creating Superuser
  #
- ### Unit Testing
+ ### 2. Unit Testing
   ##### Django co-founder Jacob Kaplan-Moss, “Code without tests is broken as designed.”
-    ❗️ Django projects quickly grow in size where it’s impossible to remember all the working pieces in your head
-    working on a team, it is a nightmare to work on an untested codebase. Who knows what will break?
+    ❗️ Django projects quickly grow in size where it’s impossible to remember all 
+    the working pieces in your head working on a team, it is a nightmare to work
+    on an untested codebase. Who knows what will break?
     
     Test Types:
         1. Unit tests are small, fast, and isolated to a specific piece of functionality
@@ -48,13 +50,22 @@
        • Resolve // views check can do is that HomePageView “resolves” a given URL path
        
  #   
- ### 2. User Registration
+ ### 3. User Registration
   ##### ↪️ Commits:
     • Auth App // Implementing log in and log out using Django’s own auth app
     • Auth URLs and Views
     • Homepage
     • Log In, Logout, Redirects
     • SignUp and Unit testing 
+    
+ #   
+ ### 4. Static Assets
+  ##### ↪️ Commits:
+    • static config - url,root,dirs,finders // static files configuration for production 
+    • static files and collectstatic // production-ready directory of all the static files in our project
+    • HomePage, static AboutPage
+    • Django Crispy Forms // The popular 3rd party package django-crispy-forms provides a host of welcome upgrades
+    • Testing AboutPage // Unit Tests
   
   # 
   ##### 📄 Summary:
@@ -66,5 +77,9 @@
         
      3. Bookstore project is not the most beautiful site in the world, 
         but it is very functional at this point.
+        
+     4. Static assets are a core part of every website and in Django we have to 
+        take a number of additional steps so they are compiled and 
+        hosted efficiently in production
    
  
