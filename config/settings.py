@@ -50,6 +50,9 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+
+    # Third-party
+    'crispy_forms',
 ]
 
 AUTH_USER_MODEL = 'accounts.CustomUser' 
@@ -157,3 +160,8 @@ STATICFILES_FINDERS = [
 
 LOGIN_REDIRECT_URL = 'home'
 LOGOUT_REDIRECT_URL = 'home'
+
+
+# Django-crispy-forms
+
+CRISPY_TEMPLATE_PACK = 'bootstrap4' # provide pre-styled forms
