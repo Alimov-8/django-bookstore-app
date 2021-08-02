@@ -143,8 +143,17 @@ USE_TZ = True
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/3.1/howto/static-files/
 
-STATIC_URL = '/static/'
+STATIC_URL = '/static/' # This sets the URL that we can use to reference static files
+STATICFILES_DIRS = (str(BASE_DIR.joinpath('static')),) # Defines the location of static files in local development
+STATIC_ROOT = str(BASE_DIR.joinpath('staticfiles')) #  The location of static files for production 
+STATICFILES_FINDERS = [  
+    # Finders tells Django how to look for static file directories
+    "django.contrib.staticfiles.finders.FileSystemFinder",
+    "django.contrib.staticfiles.finders.AppDirectoriesFinder",
+] 
 
+
+# Redirects
 
 LOGIN_REDIRECT_URL = 'home'
 LOGOUT_REDIRECT_URL = 'home'
