@@ -60,8 +60,6 @@ INSTALLED_APPS = [
 
 AUTH_USER_MODEL = 'accounts.CustomUser' 
 
-# django-allauth config
-SITE_ID = 1 
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
@@ -162,19 +160,21 @@ STATICFILES_FINDERS = [
 ] 
 
 
-# Redirects
-
-LOGIN_REDIRECT_URL = 'home'
-LOGOUT_REDIRECT_URL = 'home'
-
-
 # Django-crispy-forms
 
 CRISPY_TEMPLATE_PACK = 'bootstrap4' # provide pre-styled forms
 
+
+# django-allauth config
+
+LOGIN_REDIRECT_URL = 'home'
+ACCOUNT_LOGOUT_REDIRECT = 'home' 
+
+SITE_ID = 1
+
 AUTHENTICATION_BACKENDS = (
     'django.contrib.auth.backends.ModelBackend', # authenticate a user
-    'allauth.account.auth_backends.AuthenticationBackend', # via e-mail
+    'allauth.account.auth_backends.AuthenticationBackend', # login via e-mail 
 )
 
 EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend' 
