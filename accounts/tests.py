@@ -6,6 +6,7 @@ from .views import SignupPageView
 
 # Create your tests here.
 
+
 class CustomUserTests(TestCase):
 
     def test_create_user(self):
@@ -52,14 +53,14 @@ class SignupPageTests(TestCase):
         self.assertTemplateUsed(self.response, 'registration/signup.html')
         self.assertContains(self.response, 'Sign Up')
         self.assertNotContains(
-        self.response, 'Hi there! I should not be on the page.')
+            self.response, 'Hi there! I should not be on the page.')
 
-    def test_signup_form(self): 
+    def test_signup_form(self):  
         form = self.response.context.get('form')
         self.assertIsInstance(form, CustomUserCreationForm)
         self.assertContains(self.response, 'csrfmiddlewaretoken')
-        
-    def test_signup_view(self): 
+
+    def test_signup_view(self):
         view = resolve('/accounts/signup/')
         self.assertEqual(
             view.func.__name__,
