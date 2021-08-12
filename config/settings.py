@@ -42,7 +42,7 @@ INSTALLED_APPS = [
     # Apps
     'accounts.apps.AccountsConfig',
     'pages.apps.PagesConfig',
-
+    
     # Default
     'django.contrib.admin',
     'django.contrib.auth',
@@ -58,7 +58,7 @@ INSTALLED_APPS = [
     'allauth.account',
 ]
 
-AUTH_USER_MODEL = 'accounts.CustomUser'
+AUTH_USER_MODEL = 'accounts.CustomUser' 
 
 
 MIDDLEWARE = [
@@ -174,15 +174,14 @@ SITE_ID = 1
 
 AUTHENTICATION_BACKENDS = (
     'django.contrib.auth.backends.ModelBackend', # authenticate a user
-    'allauth.account.auth_backends.AuthenticationBackend', # login via e-mail
+    'allauth.account.auth_backends.AuthenticationBackend', # login via e-mail 
 )
 
-EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
+EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend' 
 
 # ACCOUNT_SESSION_REMEMBER = True # remembers user login
 
-# ACCOUNT_SIGNUP_PASSWORD_ENTER_TWICE = False
-
+# ACCOUNT_SIGNUP_PASSWORD_ENTER_TWICE = False 
 
 # Email Only Login
 ACCOUNT_USERNAME_REQUIRED = False
