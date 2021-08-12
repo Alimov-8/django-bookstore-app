@@ -24,11 +24,10 @@ urlpatterns = [
     path('accounts/', include('allauth.urls')), # swap out the built-in auth app
 
     # path('accounts/', include('django.contrib.auth.urls')), 
-    """ At this point we could further delete accounts/urls.py and accounts/views.py 
-        which were both created solely for our hand-written sign up page and are no 
-        longer being used. """
+    # At this point we could further delete accounts/urls.py and accounts/views.py 
+    # which were both created solely for our hand-written sign up page and are no 
+    # longer being used. 
 
     # Local apps
     path('', include('pages.urls')),
-    path('accounts/', include('accounts.urls')), 
 ]
