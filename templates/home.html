@@ -6,7 +6,8 @@
     <img class="bookcover" src="{% static 'images/dfp.png' %}">
     {% if user.is_authenticated %}
         <p>Hi {{ user.email }}!</p>
-        <p><a href="{% url 'account_logout' %}">Log Out</a></p>
+        <p><a href="{% url 'account_logout' %}">Log Out</a> |
+        <a href="{% url 'account_change_password' %}">Change Password</a></p>
     {% else %}
         <p>You are not logged in</p>
         <p><a href="{% url 'account_login' %}">Log In</a> |
