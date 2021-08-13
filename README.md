@@ -7,6 +7,7 @@
     📌 Unit Tests
     📌 User Registration
     📌 Static Assets
+    📌 Advanced User Registration
     📌 Summary
  #
  ### Getting Started
@@ -66,6 +67,21 @@
     • HomePage, static AboutPage
     • Django Crispy Forms // The popular 3rd party package django-crispy-forms provides a host of welcome upgrades
     • Testing AboutPage // Unit Tests
+    
+ #   
+ ### 5. Advanced User Registration
+  ##### ↪️ Commits:
+    Django AllAuth is really simple to integrate into your Django project, Django AllAuth
+    will provide you user Registration, login, logout, email update, forgot password, and 
+    many more features already implemented and ready to use. Django AllAuth also does data validation
+    
+    • django-allauth and Auth Backends // auth via e-mail too and django.contrib.sites
+    • core mail backend // successful user registration emails to the command line console
+    • built-in auth app URLs 
+    • templates for allauth // allauth prefers they be located within a templates/account 
+    • LogIn, LogOut, SignUp functionalities // {% url 'account_logout' %}
+    • Email Only Login // settings.py
+    • Tests for SignUp // django-allauth comes with its own tests. Tested only SignUp Page
   
   # 
   ##### 📄 Summary:
@@ -81,5 +97,9 @@
      4. Static assets are a core part of every website and in Django we have to 
         take a number of additional steps so they are compiled and 
         hosted efficiently in production
+        
+     5. We now have a user registration flow that works and can be quickly extended
+        into social authentication if needed. In the next chapter we’ll add environment 
+        variables to our project for greater security and flexibility
    
  
