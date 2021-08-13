@@ -8,6 +8,7 @@
     📌 User Registration
     📌 Static Assets
     📌 Advanced User Registration
+    📌 Environment Variables
     📌 Summary
  #
  ### Getting Started
@@ -60,21 +61,22 @@
     • SignUp and Unit testing 
     
  #   
- ### 4. Static Assets
+ ### 4. Configure Static Assets Local/Production
   ##### ↪️ Commits:
     • static config - url,root,dirs,finders // static files configuration for production 
     • static files and collectstatic // production-ready directory of all the static files in our project
     • HomePage, static AboutPage
-    • Django Crispy Forms // The popular 3rd party package django-crispy-forms provides a host of welcome upgrades
+    • Django Crispy Forms // The django-crispy-forms provides a host of welcome upgrades
     • Testing AboutPage // Unit Tests
     
  #   
  ### 5. Advanced User Registration
-  ##### ↪️ Commits:
+  ##### AllAuth
     Django AllAuth is really simple to integrate into your Django project, Django AllAuth
     will provide you user Registration, login, logout, email update, forgot password, and 
     many more features already implemented and ready to use. Django AllAuth also does data validation
     
+ ##### ↪️ Commits:   
     • django-allauth and Auth Backends // auth via e-mail too and django.contrib.sites
     • core mail backend // successful user registration emails to the command line console
     • built-in auth app URLs 
@@ -83,6 +85,20 @@
     • Email Only Login // settings.py
     • Tests for SignUp // django-allauth comes with its own tests. Tested only SignUp Page
   
+ #   
+ ### 6. Environment Variables
+    Environment variables are variables that can be loaded into the operating environment of a
+    project at run time as opposed to hard coded into the codebase itself. They are considered an
+    integral part of the popular Twelve-Factor App Design methodology and a Django best practice
+    because they allow a greater level of security and simpler local/production configurations.
+    
+    Why Secure? we can store truly secret information–database credentials, API
+    keys, and so on–separate from the actual code base. This is a good idea because using a version
+    control system, like git, means that it only takes one bad commit for credentials to be added in
+    there forever. Which means that anyone with access to the codebase has full control over the
+    project. https://github.com/Alimov-8/django-bookstore-app/blob/main/config/settings.py#L14
+
+ 
   # 
   ##### 📄 Summary:
      1. Bookstore project is now running with Docker and PostgreSQL and configured a
@@ -101,5 +117,7 @@
      5. We now have a user registration flow that works and can be quickly extended
         into social authentication if needed. In the next chapter we’ll add environment 
         variables to our project for greater security and flexibility
+        
+     6. Adding environment variables is a necessary step for any truly professional Django project.
    
  
