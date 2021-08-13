@@ -66,7 +66,7 @@
     • static config - url,root,dirs,finders // static files configuration for production 
     • static files and collectstatic // production-ready directory of all the static files in our project
     • HomePage, static AboutPage
-    • Django Crispy Forms // The popular 3rd party package django-crispy-forms provides a host of welcome upgrades
+    • Django Crispy Forms // The django-crispy-forms provides a host of welcome upgrades
     • Testing AboutPage // Unit Tests
     
  #   
