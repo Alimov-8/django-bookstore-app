@@ -2,6 +2,7 @@
 ### 📚 Production websites with Python & Django (WILLIAM S. VINCENT) 
 #
   ##### ✏️ Topics:
+    # Could apply to almost any new project
     📌 Docker & Postgresql with Django
     📌 Custom User Model
     📌 Unit Tests
@@ -9,7 +10,13 @@
     📌 Static Assets
     📌 Advanced User Registration
     📌 Environment Variables
+    📌 Email Services 
+    
+    # Building out the Bookstore site itself
+    📌 Books App
+    
     📌 Summary
+    
  #
  ### Getting Started
     • Setup Dev Environment
@@ -97,6 +104,13 @@
     control system, like git, means that it only takes one bad commit for credentials to be added in
     there forever. Which means that anyone with access to the codebase has full control over the
     project. https://github.com/Alimov-8/django-bookstore-app/blob/main/config/settings.py#L14
+  
+  
+ #   
+ ### 7. [Email Services](https://github.com/pennersr/django-allauth/tree/master/allauth/) | [Documentation](https://docs.djangoproject.com/en/3.2/topics/email/)
+ ##### ↪️ Commits:   
+    • Confirmation Emails, Password reset/change 
+        Fully configure email and add password change and password reset functionality.
 
  
   # 
@@ -119,5 +133,7 @@
         variables to our project for greater security and flexibility
         
      6. Adding environment variables is a necessary step for any truly professional Django project.
-   
+     
+     7. Configuring email properly is largely a one-time pain. But it is a necessary 
+        part of any production website.  
  
