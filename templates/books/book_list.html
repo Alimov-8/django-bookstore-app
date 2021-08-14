@@ -1,0 +1,12 @@
+<!-- template/books/book_list.html -->
+{% extends '_base.html' %}
+
+{% block title%} Books {% endblock title %}
+
+{% block content %}
+    {% for book in book_list %}
+        <div>
+            <h2><a href="">{{ book.title }}</a></h2>
+        </div> 
+    {% endfor %}
+{% endblock content %}
