@@ -14,6 +14,8 @@
     
     # Building out the Bookstore site itself
     📌 Books App
+    📌 Reviews App
+    📌 File/Image Uploads
     
     📌 Summary
     
@@ -138,6 +140,19 @@
         - UUID (Universally Unique IDentifier)  e.g. books/4301d961-0531-4ed8-8cac-396325b1c20c/
         
     • Unit Tests
+  
+  
+  #      
+  ### 9. Reviews App, Foreign Keys
+  ##### ↪️ Commits:
+    • There are three possible types of foreign key relationships:
+      One-to-one -> user profile
+      One-to-many ->  one student can sign up for many classes
+      Many-to-many -> each book could have more than one author and each author can write more
+      than one book
+    
+    • Reviews App, Models FK, Admin TabularInline
+    • Unit Tests
 
  
   # 
@@ -167,4 +182,10 @@
      8. Bookstore project is now much clearer.
         Added a books model, learned how to change the URL structure, and
         switched to the much more secure UUID pattern
+        
+     9. Review app model added into books app,
+        As the project grows it might also make sense to split reviews off into its own dedicated app.
+        In general, keeping things as simple as possible–adding foreign
+        keys within an existing app until it becomes too large to 
+        easily understand–is a solid approach
  
