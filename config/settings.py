@@ -43,11 +43,6 @@ ALLOWED_HOSTS = ['.pythonanywhere.com',
 # Application definition
 
 INSTALLED_APPS = [
-    # Apps
-    'accounts.apps.AccountsConfig',
-    'pages.apps.PagesConfig',
-    
-    # Default
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
@@ -58,11 +53,16 @@ INSTALLED_APPS = [
 
     # Third-party
     'crispy_forms',
-    'allauth', 
+    'allauth',
     'allauth.account',
+
+    # Apps
+    'accounts.apps.AccountsConfig',
+    'pages.apps.PagesConfig',
+    'books.apps.BooksConfig',
 ]
 
-AUTH_USER_MODEL = 'accounts.CustomUser' 
+AUTH_USER_MODEL = 'accounts.CustomUser'
 
 
 MIDDLEWARE = [
