@@ -111,6 +111,33 @@
  ##### ↪️ Commits:   
     • Confirmation Emails, Password reset/change 
         Fully configure email and add password change and password reset functionality.
+        
+  #      
+  ### 8. Books App, List&Detail View, and UUID
+  ##### ↪️ Commits:
+    • Books App Models and Admin added
+        verbosa name added to make admin panel understandable to client
+        
+    • URLs, Views, Templates, context object configs
+        context_object_name = 'book_list' // object_list -> book_list: to make code clear 
+    
+    • DetailView with get_absoulte_url | pk,id,slug,uuid
+        - get_absolute url
+          reverse('book_detail', args=[str(self.id)])
+          {% url 'book_detail' book.pk %} -> "{{ book.get_absolute_url }}"
+          
+        - id is a model field automatically set by Django internally to auto-increment
+        
+        id not ideal for a real-world project. There are two alternative approaches:
+         
+        - “slug,” a newspaper term for a short label for something that is often used in URLs
+          e.g. django-for-professionals. But The main challenge with slugs is handling duplicates,
+          though this can be solved by adding
+          random strings or numbers to a given slug field. The synchronization issue remains though
+          
+        - UUID (Universally Unique IDentifier)  e.g. books/4301d961-0531-4ed8-8cac-396325b1c20c/
+        
+    • Unit Tests
 
  
   # 
@@ -136,4 +163,8 @@
      
      7. Configuring email properly is largely a one-time pain. But it is a necessary 
         part of any production website.  
+        
+     8. Bookstore project is now much clearer.
+        Added a books model, learned how to change the URL structure, and
+        switched to the much more secure UUID pattern
  
