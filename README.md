@@ -154,6 +154,15 @@
     • Reviews App, Models FK, Admin TabularInline
     • Unit Tests
 
+   #      
+  ### 10. File/Image Uploads
+  ##### ↪️ Commits:
+    • Media Files Config:
+      MEDIA_ROOT -> is the absolute file system path to the directory 
+      for user-uploaded files
+      MEDIA_URL -> is the URL we can use in our templates for the files
+
+
  
   # 
   ##### 📄 Summary:
@@ -188,4 +197,9 @@
         In general, keeping things as simple as possible–adding foreign
         keys within an existing app until it becomes too large to 
         easily understand–is a solid approach
+
+    10. This chapter demonstrated how to add user files to a project. 
+        In practice it is straightforward,
+        but the additional layer of security concerns makes it an 
+        area worthy of focus at scale.
  

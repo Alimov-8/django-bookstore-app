@@ -157,22 +157,27 @@ USE_TZ = True
 STATIC_URL = '/static/' # This sets the URL that we can use to reference static files
 STATICFILES_DIRS = (str(BASE_DIR.joinpath('static')),) # Defines the location of static files in local development
 STATIC_ROOT = str(BASE_DIR.joinpath('staticfiles')) # The location of static files for production 
-STATICFILES_FINDERS = [  
+STATICFILES_FINDERS = [
     # Finders tells Django how to look for static file directories
     "django.contrib.staticfiles.finders.FileSystemFinder",
     "django.contrib.staticfiles.finders.AppDirectoriesFinder",
-] 
+]
+
+# URL we can use in our templates
+MEDIA_URL = '/media/'
+# Absolute file system path to the directory for user-uploaded files
+MEDIA_ROOT = str(BASE_DIR.joinpath('media'))
 
 
-# Django-crispy-forms
+# Django-crispy-forms provide pre-styled forms
 
-CRISPY_TEMPLATE_PACK = 'bootstrap4' # provide pre-styled forms
+CRISPY_TEMPLATE_PACK = 'bootstrap4'
 
 
 # django-allauth config
 
 LOGIN_REDIRECT_URL = 'home'
-ACCOUNT_LOGOUT_REDIRECT = 'home' 
+ACCOUNT_LOGOUT_REDIRECT = 'home'
 
 SITE_ID = 1
 
@@ -181,11 +186,11 @@ AUTHENTICATION_BACKENDS = (
     'allauth.account.auth_backends.AuthenticationBackend', # login via e-mail 
 )
 
-EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend' 
+EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
 
 # ACCOUNT_SESSION_REMEMBER = True # remembers user login
 
-# ACCOUNT_SIGNUP_PASSWORD_ENTER_TWICE = False 
+# ACCOUNT_SIGNUP_PASSWORD_ENTER_TWICE = False
 
 # Email Only Login
 ACCOUNT_USERNAME_REQUIRED = False
