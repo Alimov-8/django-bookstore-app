@@ -16,6 +16,7 @@
     📌 Books App
     📌 Reviews App
     📌 File/Image Uploads
+    📌 Permissions
     
     📌 Summary
     
@@ -161,6 +162,19 @@
       MEDIA_ROOT -> is the absolute file system path to the directory 
       for user-uploaded files
       MEDIA_URL -> is the URL we can use in our templates for the files
+
+   #      
+  ### 10. Permissions
+  ##### ↪️ Commits:
+    • Logged-In Users Only:
+      login_required() decorator / LoginRequired mixin (class-based views)
+
+      “Books” link it will automatically redirect not login user to the Log In 
+      page and if you somehow knew the UUID of a specific book page you’d be
+      redirected to Log In as well!
+
+
+
 
 
  
