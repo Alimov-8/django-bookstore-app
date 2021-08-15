@@ -28,6 +28,9 @@ class Book(models.Model):
     class Meta:
         verbose_name = 'Book 📘'
         verbose_name_plural = 'Books 📚'
+        permissions = [
+            ('special_status', 'Can read all books'),
+        ]
 
 
 # As the project grows it might also make sense

@@ -168,13 +168,22 @@
   ##### ↪️ Commits:
     • Logged-In Users Only:
       login_required() decorator / LoginRequired mixin (class-based views)
-
       “Books” link it will automatically redirect not login user to the Log In 
       page and if you somehow knew the UUID of a specific book page you’d be
       redirected to Log In as well!
 
+    • Custom Permissions:
+      Can be add into model using Meta Class, and in the view can be used by 
+      importing PermissionRequiredMixin and permission_required filed inside CBV
 
-
+    • Groups & UserPassesTestMixin:
+      The third permissions mixin available is UserPassesTestMixin which 
+      restricts a view’s access only to users who pass a specific test.
+      An example of groups is if you have a premium section on your website,
+      a user upgrading could switch them into the premium group and then 
+      have access to however many specific extra permissions that involves.
+    
+    • Unit Tests
 
 
  
@@ -216,4 +225,7 @@
         In practice it is straightforward,
         but the additional layer of security concerns makes it an 
         area worthy of focus at scale.
+
+    11. Permissions and groups are a highly subjective area that vary widely 
+        from project to project.
  
