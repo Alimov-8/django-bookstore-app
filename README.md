@@ -164,7 +164,7 @@
       MEDIA_URL -> is the URL we can use in our templates for the files
 
    #      
-  ### 10. Permissions
+  ### 11. Permissions
   ##### ↪️ Commits:
     • Logged-In Users Only:
       login_required() decorator / LoginRequired mixin (class-based views)

@@ -46,7 +46,7 @@ class BookTests(TestCase):
     #     self.assertContains(response, 'Harry Potter')
     #     self.assertTemplateUsed(response, 'books/book_list.html')
 
-    def test_book_list_view_for_logged_out_user(self): # new
+    def test_book_list_view_for_logged_out_user(self):
         self.client.logout()
         response = self.client.get(reverse('book_list'))
         self.assertEqual(response.status_code, 302)
