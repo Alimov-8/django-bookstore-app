@@ -17,6 +17,8 @@
     📌 Reviews App
     📌 File/Image Uploads
     📌 Permissions
+    📌 Search
+    📌 Performance
     
     📌 Summary
     
@@ -185,6 +187,13 @@
     
     • Unit Tests
 
+ #   
+ ### 12. Search
+  ##### ↪️ Commits:
+    • Search Results Page
+       Basic Filtering 
+       Q Objects
+       Forms and Search Form
 
  
   # 
@@ -228,4 +237,10 @@
 
     11. Permissions and groups are a highly subjective area that vary widely 
         from project to project.
+
+    12. Basic Searching is ready
+      There are several third-party packages with enhanced features such as 
+      django-watson or django-haystack however, given that we’re using 
+      PostgreSQL as the database, we can take advantage of its full text search
+      and other features which are built into Django itself.
  
