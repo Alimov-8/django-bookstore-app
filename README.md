@@ -157,6 +157,8 @@
     
     • Reviews App, Models FK, Admin TabularInline
     • Unit Tests
+    
+    • Reviews CreateView form added // links review to book and speficies its author
 
    #      
   ### 10. File/Image Uploads
