@@ -12,7 +12,7 @@
         <p>Author: {{ book.author }}</p>
         <p>Price: {{ book.price }}</p>
         <div>
-            <h3>Reviews</h3>
+            <h3>Reviews </h3> <p><a href="{% url 'review_new' book.id %}"> + New</a></p> 
             <ul>
             {% for review in book.reviews.all %}
             <li>{{ review.review }} ({{ review.author }})</li>

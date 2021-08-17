@@ -96,6 +96,7 @@
     • LogIn, LogOut, SignUp functionalities // {% url 'account_logout' %}
     • Email Only Login // settings.py
     • Tests for SignUp // django-allauth comes with its own tests. Tested only SignUp Page
+    • django authall override password templates // for reset, change cases
   
  #   
  ### 6. Environment Variables
