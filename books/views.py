@@ -55,3 +55,8 @@ class ReviewCreateView(LoginRequiredMixin, CreateView):
 
     def get_success_url(self):
         return reverse_lazy('book_detail', kwargs={'pk': self.kwargs['pk']})
+
+    def get_context_data(self, **kwargs):
+        context = super(ReviewCreateView, self).get_context_data(**kwargs)
+        context['book'] = Book.objects.filter(pk=self.kwargs['pk']).first()
+        return context

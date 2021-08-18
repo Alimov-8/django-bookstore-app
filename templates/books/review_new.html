@@ -2,7 +2,8 @@
 {% load crispy_forms_tags %}
 
 {% block content %}
-    <h1>New Comment</h1>
+
+    <h1>{{ book.title }}</h1>
     <form action="" method="post">
         {% csrf_token %}
         {{ form|crispy }}
