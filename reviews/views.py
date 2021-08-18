@@ -39,3 +39,16 @@ class ReviewUpdateView(LoginRequiredMixin, UserPassesTestMixin, UpdateView):
     def get_success_url(self):
         book_id = Review.objects.filter(pk=self.kwargs['pk']).first().book.id
         return reverse_lazy('book_detail', kwargs={'pk': book_id})
+
+
+class ReviewDeleteView(LoginRequiredMixin, UserPassesTestMixin, DeleteView):
+    model = Review
+    template_name = 'reviews/review_delete.html'
+
+    def test_func(self):
+        obj = self.get_object()
+        return obj.author == self.request.user
+
+    def get_success_url(self):
+        book_id = Review.objects.filter(pk=self.kwargs['pk']).first().book.id
+        return reverse_lazy('book_detail', kwargs={'pk': book_id})
