@@ -8,8 +8,9 @@
     {% for book in book_list %}
         <div>
             <h3><a href="{{ book.get_absolute_url }}">{{ book.title }}</a></h3>
-            <p>Author: {{ book.author }}</p>
-            <p>Price: $ {{ book.price }}</p>
+            <p>Author: {{ book.author }} <br>
+            Price: $ {{ book.price }}</p>
+            <br>
         </div>
     {% endfor %}
 {% endblock content %}

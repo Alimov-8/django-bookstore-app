@@ -3,11 +3,6 @@
 {% block title %}Home{% endblock title %}
 {% block content %}
     <h1>Homepage</h1>
-    <form class="form-inline mt-2 mt-md-0" action="{% url 'search_results' %}"
-            method="get">
-        <input name="q" class="form-control mr-sm-2" type="text" placeholder="Search Book"
-            aria-label="Search">
-    </form>
     {% if user.is_authenticated %}
         <p><br>  Hi {{ user.email }}!</p>
         <p><a href="{% url 'account_logout' %}">Log Out</a> |

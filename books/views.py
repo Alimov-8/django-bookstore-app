@@ -42,3 +42,22 @@ class SearchResultsListView(ListView):
         return Book.objects.filter(
             Q(title__icontains=query) | Q(author__icontains=query)
         )
+
+
+class BookCreateView(LoginRequiredMixin, CreateView):
+    model = Book
+    template_name = 'books/book_new.html'
+    fields = [
+        'title',
+        'author',
+        'price',
+        'cover',
+        'description',
+    ]
+
+    def form_valid(self, form):
+        form.instance.seller = self.request.user
+        return super().form_valid(form)
+
+    def get_success_url(self):
+        return reverse_lazy('book_list')

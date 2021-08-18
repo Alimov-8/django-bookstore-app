@@ -5,13 +5,23 @@
 
 {% block content %}
     <div class="book-detail">
+        {% if book.seller.username == 'admin' %}
+            <p>Order your book from Bookstore</p>
+        {% else %}
+            <p> 
+                Contact info: <br> 
+                {{book.seller.username}} | {{book.seller.email}}
+            </p>
+        {% endif %}
+
+        <h2><a href="">{{ book.title }}</a></h2>
+        <p>Author: {{ book.author }} <br>
+        Price: {{ book.price }}</p>
         {% if book.cover %}
         <img class="bookcover" src="{{ book.cover.url}}" alt="{{ book.title }}">
         {% endif %}
-        <h2><a href="">{{ book.title }}</a></h2>
-        <p>Author: {{ book.author }}</p>
-        <p>Price: {{ book.price }}</p>
-        <div>
+        <p>{{book.description|linebreaks}}</p>
+        <div><br>
             <h3>Reviews </h3> <p><a href="{% url 'review_new' book.id %}"> + New</a></p> 
             <ul>
             {% for review in book.reviews.all %}
@@ -20,6 +30,7 @@
             </li>
             {% endfor %}
             </ul>
+            <br>
         </div>
     </div>
 {% endblock content %}
