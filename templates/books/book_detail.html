@@ -15,7 +15,9 @@
             <h3>Reviews </h3> <p><a href="{% url 'review_new' book.id %}"> + New</a></p> 
             <ul>
             {% for review in book.reviews.all %}
-            <li>{{ review.author }} - {{ review.review }}</li>
+            <li>
+                <a href="{% url 'review_update' review.id %}">{{ review.author }}</a> - {{ review.review }}
+            </li>
             {% endfor %}
             </ul>
         </div>

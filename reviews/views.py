@@ -1,5 +1,5 @@
 from django.shortcuts import render
-from django.contrib.auth.mixins import LoginRequiredMixin
+from django.contrib.auth.mixins import LoginRequiredMixin, UserPassesTestMixin
 from django.views.generic.edit import UpdateView, DeleteView, CreateView
 from books.models import Book
 from reviews.models import Review
@@ -26,3 +26,16 @@ class ReviewCreateView(LoginRequiredMixin, CreateView):
         context['book'] = Book.objects.filter(pk=self.kwargs['pk']).first()
         return context
 
+
+class ReviewUpdateView(LoginRequiredMixin, UserPassesTestMixin, UpdateView):
+    model = Review
+    template_name = 'reviews/review_update.html'
+    fields = ('review',)
+
+    def test_func(self):
+        obj = self.get_object()
+        return obj.author == self.request.user
+
+    def get_success_url(self):
+        book_id = Review.objects.filter(pk=self.kwargs['pk']).first().book.id
+        return reverse_lazy('book_detail', kwargs={'pk': book_id})
