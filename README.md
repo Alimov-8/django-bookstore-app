@@ -159,7 +159,11 @@
     • Unit Tests
     
     • Reviews CreateView form added // links review to book and speficies its author
-
+    • Context object added to Reviews // speficies book title for review
+    • Reviews app created // books up become large then reviews app created 
+    • login via email & username, update review by author 
+    • Review DeleteView added // CRUD for Reviews ready
+    
    #      
   ### 10. File/Image Uploads
   ##### ↪️ Commits:
