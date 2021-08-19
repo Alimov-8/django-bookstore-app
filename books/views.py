@@ -48,6 +48,7 @@ class BookCreateView(LoginRequiredMixin, CreateView):
     model = Book
     template_name = 'books/book_new.html'
     fields = [
+        'category',
         'title',
         'author',
         'price',

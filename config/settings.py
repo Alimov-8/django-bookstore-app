@@ -61,6 +61,7 @@ INSTALLED_APPS = [
     'pages.apps.PagesConfig',
     'books.apps.BooksConfig',
     'reviews.apps.ReviewsConfig',
+    'categories.apps.CategoriesConfig',
 ]
 
 AUTH_USER_MODEL = 'accounts.CustomUser'

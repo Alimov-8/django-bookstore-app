@@ -9,12 +9,22 @@ class ReviewInline(admin.TabularInline):
     model = Review
 
 
-class BookAdmin(admin.ModelAdmin):
-    list_display = ("title", "author", "price",)
+@admin.register(Book)
+class ProductAdmin(admin.ModelAdmin):
+    list_display = [
+        'title',
+        'author',
+        'price',
+        'available',
+        'created',
+    ]
 
+    list_filter = [
+        'available',
+        'created',
+    ]
+
+    list_editable = ['price', 'available']
     inlines = [
         ReviewInline,
     ]
-
-
-admin.site.register(Book, BookAdmin)

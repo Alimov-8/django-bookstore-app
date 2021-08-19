@@ -144,7 +144,8 @@
         - UUID (Universally Unique IDentifier)  e.g. books/4301d961-0531-4ed8-8cac-396325b1c20c/
         
     • Unit Tests
-  
+    
+    • Book CreateView added // feature that allows users to sell thier books in   Bookstore
   
   #      
   ### 9. Reviews App, Foreign Keys
