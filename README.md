@@ -203,6 +203,14 @@
        Q Objects
        Forms and Search Form
 
+
+ #   
+ ### 13. Categories App 
+  ##### ↪️ Commits:
+    • Categories added | Books model&admin improved 
+
+    • Categories View & Templates added // Categories Menu added into templates
+
  
   # 
   ##### 📄 Summary:
@@ -247,8 +255,11 @@
         from project to project.
 
     12. Basic Searching is ready
-      There are several third-party packages with enhanced features such as 
-      django-watson or django-haystack however, given that we’re using 
-      PostgreSQL as the database, we can take advantage of its full text search
-      and other features which are built into Django itself.
+        There are several third-party packages with enhanced features such as 
+        django-watson or django-haystack however, given that we’re using 
+        PostgreSQL as the database, we can take advantage of its full text search
+        and other features which are built into Django itself.
+
+    13. Creating the product catalog models, adding them to the administration site,
+        and building the basic views to display the catalog
  
