@@ -1,37 +1,45 @@
 <!-- templates/books/book_detail.html -->
 {% extends '_base.html' %}
+{% load static %}
 
 {% block title %}{{ book.title }}{% endblock title %}
 
 {% block content %}
-    <div class="book-detail">
+    <div class="product-detail">
+        <img src="
+            {% if book.cover %}
+                {{ book.cover.url }}
+            {% else %}
+                {% static 'images/no_image.png' %}
+            {% endif %}">
+        <h1>{{ book.title }}</h1>
+        <h2>
+            <a href="{{ book.category.get_absolute_url }}">
+                {{ book.category }}
+            </a>
+        </h2>
+
+        <p class="price"> ${{ book.price }} </p>
+        {{ book.description|linebreaks }}
+
         {% if book.seller.username == 'admin' %}
-            <p>Order your book from Bookstore</p>
+            <p><b>Order</b> your book from Bookstore</p>
         {% else %}
             <p> 
-                Contact info: <br> 
+                <b>Contact info:</b> <br> 
                 {{book.seller.username}} | {{book.seller.email}}
             </p>
         {% endif %}
 
-        <h2><a href="">{{ book.title }}</a></h2>
-        <p>Author: {{ book.author }} <br>
-        Price: {{ book.price }}</p>
-        {% if book.cover %}
-        <img class="bookcover" src="{{ book.cover.url}}" alt="{{ book.title }}">
-        {% endif %}
-        <p>{{book.description|linebreaks}}</p>
-        <div><br>
-            <h3>Reviews </h3> <p><a href="{% url 'review_new' book.id %}"> + New</a></p> 
-            <ul>
+        <h3>Reviews </h3> <p><a href="{% url 'review_new' book.id %}"> + New</a></p> 
+        <ul>
             {% for review in book.reviews.all %}
-            <li>
-                <a href="{% url 'review_update' review.id %}">{{ review.author }}</a> - {{ review.review }}
-            </li>
+                <li>
+                    <a href="{% url 'review_update' review.id %}">{{ review.author }}</a> - {{ review.review }}
+                </li>
             {% endfor %}
-            </ul>
-            <br>
-        </div>
+        </ul>
+        <br>
     </div>
 {% endblock content %}
 

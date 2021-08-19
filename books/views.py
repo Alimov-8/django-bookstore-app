@@ -1,3 +1,4 @@
+from categories.models import Category
 from django.shortcuts import render
 from django.contrib.auth.mixins import (
     LoginRequiredMixin,
@@ -16,9 +17,16 @@ from django.urls import reverse_lazy
 
 class BookListView(LoginRequiredMixin, ListView):
     model = Book
-    context_object_name = 'book_list'
     template_name = 'books/book_list.html'
     login_url = 'account_login'
+
+    def get_context_data(self, **kwargs):
+        context = super().get_context_data(**kwargs)
+        books = Book.objects.filter(available=True)
+        categories = Category.objects.all()
+        context['book_list'] = books
+        context['categories'] = categories
+        return context
 
 
 class BookDetailView(LoginRequiredMixin,

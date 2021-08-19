@@ -11,21 +11,15 @@
             <a href="{% url 'book_list' %}"> All </a>
         </li>
 
-        {% for c in categories %}
-        <li {% if category.slug == c.slug %}class="selected"{% endif %}>
-            <a href="{{ c.get_absolute_url }}">{{ c.name }}</a>
+        <li {% if category.slug == category.slug %}class="selected"{% endif %}>
+            <a href="{{ category.get_absolute_url }}">{{ category.name }}</a>
         </li>
-        {% endfor %}
     </ul>
 
     </div>
         <div id="main" class="product-list">
         <h1>
-            {% if category %}
-                {{ category.name }}
-            {% else %}
-                Products
-            {% endif %}
+            {{category}}
         </h1>
 
         {% for book in book_list %}
