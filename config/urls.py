@@ -23,6 +23,7 @@ urlpatterns = [
     path('admin/', admin.site.urls),
 
     # User management
+    path('accounts/', include('accounts.urls')),
     path('accounts/', include('allauth.urls')), # swap out the built-in auth app
 
     # path('accounts/', include('django.contrib.auth.urls')), 
