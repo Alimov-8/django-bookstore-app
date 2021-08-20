@@ -3,6 +3,7 @@
 {% block title %}Home{% endblock title %}
 {% block content %}
     <h1>Homepage</h1>
+    Recommendations List
     {% if user.is_authenticated %}
         <p><br>  Hi {{ user.email }}!</p>
         <p><a href="{% url 'account_logout' %}">Log Out</a> |

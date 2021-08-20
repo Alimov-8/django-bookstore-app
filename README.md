@@ -71,6 +71,8 @@
     • Homepage
     • Log In, Logout, Redirects
     • SignUp and Unit testing 
+    • Signup UserCreation form modified
+    • CRUD functionality added for CustomUser
     
  #   
  ### 4. Configure Static Assets Local/Production
