@@ -2,7 +2,9 @@ from categories.models import Category
 from django.shortcuts import render
 from django.contrib.auth.mixins import (
     LoginRequiredMixin,
-    PermissionRequiredMixin
+    PermissionRequiredMixin,
+    UserPassesTestMixin,
+    UserPassesTestMixin,
 )
 from django.views.generic import ListView, DetailView
 from django.views.generic.edit import UpdateView, DeleteView, CreateView
@@ -70,3 +72,37 @@ class BookCreateView(LoginRequiredMixin, CreateView):
 
     def get_success_url(self):
         return reverse_lazy('book_list')
+
+
+class BookUpdateView(LoginRequiredMixin,
+                     UserPassesTestMixin,
+                     UpdateView):
+    model = Book
+    template_name = 'books/book_update.html'
+    login_url = 'account_login'
+    fields = [
+        'category',
+        'title',
+        'author',
+        'price',
+        'cover',
+        'description',
+    ]
+
+    def test_func(self):
+        return self.get_object().seller == self.request.user
+
+    def get_success_url(self):
+        return reverse_lazy('book_detail', kwargs={'pk': self.get_object().pk})
+
+
+class BookDeleteView(LoginRequiredMixin, UserPassesTestMixin, DeleteView):
+    model = Book
+    template_name = 'books/book_delete.html'
+
+    def test_func(self):
+        return self.get_object().seller == self.request.user
+
+    def get_success_url(self):
+        return reverse_lazy('account_detail',
+                            kwargs={'slug': self.request.user.slug})

@@ -58,6 +58,8 @@
                 {% else %}
                     in storage
                 {% endif %}
+                <br>
+                <a href="{% url 'book_update' book.pk %}"> Edit </a>
             </div>
         {% endfor %}
     </div>

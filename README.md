@@ -153,7 +153,8 @@
         
     • Unit Tests
     
-    • Book CreateView added // feature that allows users to sell thier books in   Bookstore
+    • Book CRUD functionality added // feature that allows users to sell thier books in   Bookstore
+
   
   #      
   ### 9. Reviews App, Foreign Keys
