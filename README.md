@@ -46,8 +46,11 @@
         Testing Templates, Testing Creating User, Testing Creating Superuser
 
     • CRUD functionality added for CustomUser
-    • Slug field added for CustomUser
-    • Profile view and Dashboard View added
+
+    • Slug field added for CustomUser // changing pk to slug to improve security
+
+    • Profile view and Dashboard View added // Dashboard view is open to every
+      registered user to check what kinda books exist on sale in other users profile
  #
  ### 2. Unit Testing
   ##### Django co-founder Jacob Kaplan-Moss, “Code without tests is broken as designed.”
