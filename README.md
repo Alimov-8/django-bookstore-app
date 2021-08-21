@@ -44,6 +44,10 @@
         
     • Unit Tests
         Testing Templates, Testing Creating User, Testing Creating Superuser
+
+    • CRUD functionality added for CustomUser
+    • Slug field added for CustomUser
+    • Profile view and Dashboard View added
  #
  ### 2. Unit Testing
   ##### Django co-founder Jacob Kaplan-Moss, “Code without tests is broken as designed.”
@@ -72,8 +76,7 @@
     • Log In, Logout, Redirects
     • SignUp and Unit testing 
     • Signup UserCreation form modified
-    • CRUD functionality added for CustomUser
-    • slug field added for CustomUser
+    
  #   
  ### 4. Configure Static Assets Local/Production
   ##### ↪️ Commits:

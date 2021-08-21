@@ -65,3 +65,17 @@ class AccountDeleteView(LoginRequiredMixin,
     def test_func(self):
         obj = self.get_object()
         return obj.slug == self.request.user.slug
+
+
+class AccountDashboardDetailView(LoginRequiredMixin,
+                                 DetailView):
+    model = CustomUser
+    template_name = 'account/account_dashboard.html'
+    login_url = 'account_login'
+
+    def get_context_data(self, **kwargs):
+        context = super(AccountDashboardDetailView,
+                        self).get_context_data(**kwargs)
+        context['book_list'] = Book.objects.filter(seller=self.get_object(),
+                                                   available=True)
+        return context

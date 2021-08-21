@@ -1,0 +1,31 @@
+{% extends '_base.html' %}
+{% load static %}
+{% block title%} Profile {% endblock title %}
+
+{% block content %}
+    <div>
+        <h1>{{user.username}} profile </h1>
+        <img src="
+                {% if C %}
+                    {{ user.image.url }}
+                {% else %}
+                    {% static 'images/no_image.png' %}
+                {% endif %}">
+    </div>
+
+    <div id="main" class="product-list"><br>
+        <h1>List of books on sale</h1>
+
+        {% for book in book_list %}
+            <div class="item">
+                <a href="{{ book.get_absolute_url }}">
+                    <img src="{% if book.cover %}{{ book.cover.url }}{% else %}{% static 'images/no_image.png' %}{% endif %}">
+                </a>
+                <a href="{{ book.get_absolute_url }}">{{ book.title }}</a>
+                <br>
+                ${{ book.price }}
+            </div>
+        {% endfor %}
+    </div>
+    
+{% endblock content %}

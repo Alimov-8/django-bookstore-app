@@ -23,6 +23,7 @@
         <a class="p-2 text-dark" href="{% url 'book_list' %}">Books</a>
         <a class="p-2 text-dark" href="{% url 'about' %}">About</a>
         {% if user.is_authenticated %}
+        <a class="p-2 text-dark" href="{% url 'account_dashboard' user.slug %}">Dashboard</a>
         <a class="p-2 text-dark" href="{% url 'account_detail' user.slug %}">Profile</a>
         <!-- <a class="p-2 text-dark" href="{% url 'account_logout' %}">Log Out</a> -->
         {% else %}
