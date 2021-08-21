@@ -17,7 +17,7 @@
         <h3> Actions </h3>
         <ul>
             <li>
-                <a href="{% url 'account_update' user.pk %}"> Profile Update </a>
+                <a href="{% url 'account_update' user.slug %}"> Profile Update </a>
             </li>
             <li>
                 <a href="{% url 'book_new' %}"> Sell Book </a>
@@ -26,7 +26,7 @@
                 <a href="{% url 'account_change_password' %}"> Change Password </a>
             </li>
             <li>
-                <a href="{% url 'account_delete' user.pk %}"> Delete Profile </a>
+                <a href="{% url 'account_delete' user.slug %}"> Delete Profile </a>
             </li>
             <li>
                 <a href="{% url 'account_logout' %}"> Log Out </a>

@@ -9,15 +9,15 @@ from .views import (
 urlpatterns = [
     path('signup/', SignupPageView.as_view(), name='signup'),
 
-    path('profile/<int:pk>',
+    path('profile/<slug:slug>',
          AccountDetailView.as_view(),
          name='account_detail'),
 
-    path('profile/<int:pk>/update',
+    path('profile/<slug:slug>/update',
          AccountUpdateView.as_view(),
          name='account_update'),
 
-    path('profile/<int:pk>/delete',
+    path('profile/<slug:slug>/delete',
          AccountDeleteView.as_view(),
          name='account_delete'),
 ]

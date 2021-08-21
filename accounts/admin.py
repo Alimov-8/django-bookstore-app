@@ -18,6 +18,7 @@ class CustomUserAdmin(UserAdmin):
     ]
     fieldsets = UserAdmin.fieldsets + (
         (None, {'fields': [
+            'slug',
             'phone',
             'telegram',
             'image',
@@ -26,6 +27,7 @@ class CustomUserAdmin(UserAdmin):
     )
     add_fieldsets = UserAdmin.add_fieldsets + (
         (None, {'fields': [
+            'slug',
             'phone',
             'telegram',
             'image',

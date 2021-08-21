@@ -73,7 +73,7 @@
     • SignUp and Unit testing 
     • Signup UserCreation form modified
     • CRUD functionality added for CustomUser
-    
+    • slug field added for CustomUser
  #   
  ### 4. Configure Static Assets Local/Production
   ##### ↪️ Commits:

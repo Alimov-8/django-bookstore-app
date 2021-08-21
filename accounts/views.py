@@ -27,11 +27,11 @@ class AccountDetailView(LoginRequiredMixin,
 
     def test_func(self):
         obj = self.get_object()
-        return obj.pk == self.request.user.pk
+        return obj.slug == self.request.user.slug
 
     def get_context_data(self, **kwargs):
         context = super(AccountDetailView, self).get_context_data(**kwargs)
-        context['book_list'] = Book.objects.filter(seller=self.kwargs['pk'])
+        context['book_list'] = Book.objects.filter(seller=self.get_object())
         return context
 
 
@@ -45,11 +45,11 @@ class AccountUpdateView(LoginRequiredMixin,
 
     def test_func(self):
         obj = self.get_object()
-        return obj.pk == self.request.user.pk
+        return obj.slug == self.request.user.slug
 
     def get_success_url(self):
         return reverse_lazy('account_detail',
-                            kwargs={'pk': self.request.user.pk})
+                            kwargs={'slug': self.request.user.slug})
 
 
 class AccountDeleteView(LoginRequiredMixin,
@@ -58,8 +58,10 @@ class AccountDeleteView(LoginRequiredMixin,
     model = CustomUser
     template_name = 'account/account_delete.html'
     login_url = 'account_login'
-    success_url = 'home'
+
+    def get_success_url(self):
+        return reverse_lazy('home')
 
     def test_func(self):
         obj = self.get_object()
-        return obj.pk == self.request.user.pk
+        return obj.slug == self.request.user.slug
