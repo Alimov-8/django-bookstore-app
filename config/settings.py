@@ -62,6 +62,7 @@ INSTALLED_APPS = [
     'books.apps.BooksConfig',
     'reviews.apps.ReviewsConfig',
     'categories.apps.CategoriesConfig',
+    'cart.apps.CartConfig',
 ]
 
 AUTH_USER_MODEL = 'accounts.CustomUser'
@@ -205,3 +206,6 @@ ACCOUNT_UNIQUE_EMAIL = True
 
 
 DEFAULT_FROM_EMAIL = 'admin@djangobookstore.com'
+
+
+CART_SESSION_ID = 'cart'

@@ -18,7 +18,8 @@
     📌 File/Image Uploads
     📌 Permissions
     📌 Search
-    📌 Performance
+    📌 Categories App
+    📌 Shopping Cart Sessions
     
     📌 Summary
     
@@ -220,6 +221,14 @@
 
     • Categories View & Templates added // Categories Menu added into templates
 
+
+ #   
+ ### 14. Building a shopping cart 
+  ##### ↪️ Commits:
+    • Cart App added | Session Settings, Expiration | Storing carts in sessions
+
+
+
  
   # 
   ##### 📄 Summary:
@@ -271,4 +280,5 @@
 
     13. Creating the product catalog models, adding them to the administration site,
         and building the basic views to display the catalog
- 
+    
+    14. 
