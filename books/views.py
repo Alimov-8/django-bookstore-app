@@ -1,4 +1,3 @@
-from categories.models import Category
 from django.shortcuts import render
 from django.contrib.auth.mixins import (
     LoginRequiredMixin,
@@ -7,11 +6,15 @@ from django.contrib.auth.mixins import (
     UserPassesTestMixin,
 )
 from django.views.generic import ListView, DetailView
+from django.views.generic.edit import FormMixin
 from django.views.generic.edit import UpdateView, DeleteView, CreateView
-from .models import Book
-from reviews.models import Review
 from django.db.models import Q
 from django.urls import reverse_lazy
+
+from .models import Book
+from reviews.models import Review
+from categories.models import Category
+from cart.forms import CartAddProductForm
 
 
 # Create your views here.
@@ -33,25 +36,15 @@ class BookListView(LoginRequiredMixin, ListView):
 
 class BookDetailView(LoginRequiredMixin,
                      # PermissionRequiredMixin,
+                     FormMixin,
                      DetailView):
     model = Book
+    form_class = CartAddProductForm
     context_object_name = 'book'
     template_name = 'books/book_detail.html'
     login_url = 'account_login'
     # It is possible to add multiple permissions via the permission_required
     permission_required = 'books.special_status'
-
-
-class SearchResultsListView(ListView):
-    model = Book
-    context_object_name = 'book_list'
-    template_name = 'books/search_results.html'
-
-    def get_queryset(self):
-        query = self.request.GET.get('q')
-        return Book.objects.filter(
-            Q(title__icontains=query) | Q(author__icontains=query)
-        )
 
 
 class BookCreateView(LoginRequiredMixin, CreateView):
@@ -106,3 +99,15 @@ class BookDeleteView(LoginRequiredMixin, UserPassesTestMixin, DeleteView):
     def get_success_url(self):
         return reverse_lazy('account_detail',
                             kwargs={'slug': self.request.user.slug})
+
+
+class SearchResultsListView(ListView):
+    model = Book
+    context_object_name = 'book_list'
+    template_name = 'books/search_results.html'
+
+    def get_queryset(self):
+        query = self.request.GET.get('q')
+        return Book.objects.filter(
+            Q(title__icontains=query) | Q(author__icontains=query)
+        )

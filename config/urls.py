@@ -23,8 +23,8 @@ urlpatterns = [
     path('admin/', admin.site.urls),
 
     # User management
-    path('accounts/', include('accounts.urls')),
     path('accounts/', include('allauth.urls')), # swap out the built-in auth app
+    path('accounts/', include('accounts.urls')),
 
     # path('accounts/', include('django.contrib.auth.urls')), 
     # At this point we could further delete accounts/urls.py and accounts/views.py 
@@ -36,4 +36,5 @@ urlpatterns = [
     path('books/', include('books.urls')),
     path('reviews/', include('reviews.urls')),
     path('categories/', include('categories.urls')),
+    path('cart/', include('cart.urls', namespace='cart')),
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

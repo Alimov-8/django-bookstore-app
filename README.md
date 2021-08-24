@@ -226,7 +226,7 @@
  ### 14. Building a shopping cart 
   ##### ↪️ Commits:
     • Cart App added | Session Settings, Expiration | Storing carts in sessions
-
+    • Cart Views, Urls, Form & Templates added
 
 
  
