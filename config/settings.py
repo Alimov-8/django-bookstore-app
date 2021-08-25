@@ -63,6 +63,7 @@ INSTALLED_APPS = [
     'reviews.apps.ReviewsConfig',
     'categories.apps.CategoriesConfig',
     'cart.apps.CartConfig',
+    'orders.apps.OrdersConfig',
 ]
 
 AUTH_USER_MODEL = 'accounts.CustomUser'
@@ -91,6 +92,7 @@ TEMPLATES = [
                 'django.template.context_processors.request',
                 'django.contrib.auth.context_processors.auth',
                 'django.contrib.messages.context_processors.messages',
+                'cart.context_processors.cart',
             ],
         },
     },

@@ -223,10 +223,11 @@
 
 
  #   
- ### 14. Building a shopping cart 
+ ### 14. Shopping cart & Ordering 
   ##### ↪️ Commits:
     • Cart App added | Session Settings, Expiration | Storing carts in sessions
-    • Cart Views, Urls, Form & Templates added
+    • Cart Views, Urls, Form & Templates added for sessions
+    • Orders MVT added to control Cart and Items
 
 
  

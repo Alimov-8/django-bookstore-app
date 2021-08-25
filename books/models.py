@@ -41,7 +41,7 @@ class Book(models.Model):
 
     class Meta:
         ordering = ('title',)
-        verbose_name = 'Book 📘'
+        verbose_name = 'Book'
         verbose_name_plural = 'Books 📚'
         permissions = [
             ('special_status', 'Can read all books'),
