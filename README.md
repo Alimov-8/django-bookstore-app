@@ -228,6 +228,8 @@
     • Cart App added | Session Settings, Expiration | Storing carts in sessions
     • Cart Views, Urls, Form & Templates added for sessions
     • Orders MVT added to control Cart and Items
+    • Generating PDF invoices dynamically
+      Extending the administration site with custom views
 
 
  

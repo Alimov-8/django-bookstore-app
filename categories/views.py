@@ -19,7 +19,9 @@ class BookByCategoryListView(LoginRequiredMixin, ListView):
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
         category = Category.objects.filter(slug=self.kwargs['category_slug']).first()
+        categories = Category.objects.all()
         books = Book.objects.filter(category=category.id, available=True)
         context['book_list'] = books
         context['category'] = category
+        context['categories'] = categories
         return context
