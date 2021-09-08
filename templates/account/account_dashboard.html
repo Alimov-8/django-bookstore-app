@@ -11,6 +11,16 @@
                 {% else %}
                     {% static 'images/no_image.png' %}
                 {% endif %}">
+        <p></p>
+    </div>
+
+    <div>
+        <p> 
+        <b>📌Username:</b> {{user.username}} <br>
+        <b>📌Phone:</b> {{user.phone}} <br>
+        <b>📌<a href="{{user.telegram}}"> User Telegram </a> </b><br>
+        <b>📌Email:</b> {{user.email}} <br>
+    </p>
     </div>
 
     <div id="main" class="product-list"><br>

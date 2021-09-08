@@ -76,6 +76,6 @@ class AccountDashboardDetailView(LoginRequiredMixin,
     def get_context_data(self, **kwargs):
         context = super(AccountDashboardDetailView,
                         self).get_context_data(**kwargs)
-        context['book_list'] = Book.objects.filter(seller=self.get_object(),
+        context['book_list'] = Book.objects.filter(seller=self.get_object().id,
                                                    available=True)
         return context

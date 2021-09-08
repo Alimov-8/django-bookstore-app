@@ -30,14 +30,14 @@
         </form>
         {% else %}
             <p> 
-                <b>Contact info:</b> <br> 
-                {{book.seller.username}} | {{book.seller.email}}
+                Contact 📲
+                <b><a href="{% url 'account_dashboard' book.seller.slug %}">{{book.seller.username}}</a></b>
             </p>
         {% endif %}
 
         {{ book.description|linebreaks }}
 
-        <h3>Reviews </h3> <p><a href="{% url 'review_new' book.id %}"> + New</a></p> 
+        <h3><a href="{% url 'review_new' book.id %}"> + Reviews</a></h3>
         <ul>
             {% for review in book.reviews.all %}
                 <li>

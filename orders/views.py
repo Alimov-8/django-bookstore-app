@@ -57,6 +57,7 @@ def admin_order_detail(request, order_id):
 
 @staff_member_required
 def admin_order_pdf(request, order_id):
+    pass
     order = get_object_or_404(Order, id=order_id)
     html = render_to_string('orders/order/pdf.html',
                             {'order': order})

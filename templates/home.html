@@ -1,16 +1,74 @@
 {% extends '_base.html' %}
 {% load static %}
-{% block title %}Home{% endblock title %}
+{% block title%} Profile {% endblock title %}
+
 {% block content %}
-    <h1>Homepage</h1>
-    Recommendations List
-    {% if user.is_authenticated %}
-        <p><br>  Hi {{ user.email }}!</p>
-        <p><a href="{% url 'account_logout' %}">Log Out</a> |
-        <a href="{% url 'account_change_password' %}">Change Password</a></p>
-    {% else %}
-        <p>You are not logged in</p>
-        <p><a href="{% url 'account_login' %}">Log In</a> |
-        <a href="{% url 'account_signup' %}">Sign Up</a></p>
-    {% endif %}
+{% if user.is_authenticated %}
+    <div>
+        <h1>Hi {{ user.email }}! </h1>
+        <img src="
+                {% if C %}
+                    {{ user.image.url }}
+                {% else %}
+                    {% static 'images/no_image.png' %}
+                {% endif %}">
+    </div>
+
+    <div id="sidebar">
+        <h3> Actions </h3>
+        <ul>
+            <li>
+                <a href="{% url 'account_update' user.slug %}"> Profile Update </a>
+            </li>
+            <li>
+                <a href="{% url 'book_new' %}"> Sell Book </a>
+            </li>
+            <li>
+                <a href="{% url 'account_change_password' %}"> Change Password </a>
+            </li>
+            <li>
+                <a href="{% url 'account_delete' user.slug %}"> Delete Profile </a>
+            </li>
+            <li>
+                <a href="{% url 'account_logout' %}"> Log Out </a>
+            </li>
+    
+            {% for c in categories %}
+            <li {% if category.slug == c.slug %}class="selected"{% endif %}>
+                <a href="{{ c.get_absolute_url }}">{{ c.name }}</a>
+            </li>
+            {% endfor %}
+        </ul>
+    </div>
+
+
+    <div id="main" class="product-list"><br>
+        <h1>List of books on sale</h1>
+
+        {% for book in book_list %}
+            <div class="item">
+                <a href="{{ book.get_absolute_url }}">
+                    <img src="{% if book.cover %}{{ book.cover.url }}{% else %}{% static 'images/no_image.png' %}{% endif %}">
+                </a>
+                <a href="{{ book.get_absolute_url }}">{{ book.title }}</a>
+                <br>
+                ${{ book.price }}
+
+                {% if book.available %}
+                    on sale
+                {% else %}
+                    in storage
+                {% endif %}
+                <br>
+                <a href="{% url 'book_update' book.pk %}"> Edit </a>
+            </div>
+        {% endfor %}
+    </div>
+{% else %}
+    <h1>You are not logged in</h1>
+    <p><a href="{% url 'account_login' %}">Log In</a> |
+    <a href="{% url 'account_signup' %}">Sign Up</a></p>
+{% endif %}
+    
+    
 {% endblock content %}
