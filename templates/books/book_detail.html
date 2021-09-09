@@ -35,8 +35,7 @@
 
         <p class="price"> ${{ book.price }} </p>
 
-
-        {% if book.seller.username == 'admin' %}
+        {% if book.seller.is_superuser %}
         <form action="{% url 'cart:cart_add' book.id %}" method="post">
             {{ form }}
             {% csrf_token %}
