@@ -15,10 +15,10 @@
     </div>
 
     <div id="sidebar">
-        <h3> Actions </h3>
+        <h2> Actions </h2>
         <ul>
             <li>
-                <a href="{% url 'account_update' user.slug %}"> Profile Update </a>
+                <a {% if not user.phone %} style="color:red" {% endif %} href="{% url 'account_update' user.slug %}"> Profile Update </a>
             </li>
             <li>
                 <a href="{% url 'book_new' %}"> Sell Book </a>
@@ -43,9 +43,17 @@
 
 
     <div id="main" class="product-list"><br>
-        <h1>List of books on sale</h1>
+        <h2>List of books on sale</h2>
+        {% if books_list %}
+            {% if not user.phone %}
+                <p style="color:red;"> 
+                    You added book to sale, so add your contact information via "Profile Update" link! <br>
+                    📌 phone is required
+                </p>
+            {% endif %}
+        {% endif %}
 
-        {% for book in book_list %}
+        {% for book in books_list %}
             <div class="item">
                 <a href="{{ book.get_absolute_url }}">
                     <img src="{% if book.cover %}{{ book.cover.url }}{% else %}{% static 'images/no_image.png' %}{% endif %}">

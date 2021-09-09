@@ -23,7 +23,6 @@
         <a class="p-2 text-dark" href="{% url 'about' %}">About</a>
         {% if user.is_authenticated %}
         <!-- <a class="p-2 text-dark" href="{% url 'account_dashboard' user.slug %}">Dashboard</a> -->
-        <!-- <a class="p-2 text-dark" href="{% url 'account_detail' user.slug %}">Profile</a> -->
         {% with total_items=cart|length %}
         {% if total_items > 0 %}
         Cart:

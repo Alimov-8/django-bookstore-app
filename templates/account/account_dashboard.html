@@ -4,7 +4,7 @@
 
 {% block content %}
     <div>
-        <h1>{{user.username}} profile </h1>
+        <h1>{{seller.username}} profile </h1>
         <img src="
                 {% if C %}
                     {{ user.image.url }}
@@ -15,16 +15,16 @@
     </div>
 
     <div>
-        <p> 
-        <b>📌Username:</b> {{user.username}} <br>
-        <b>📌Phone:</b> {{user.phone}} <br>
-        <b>📌<a href="{{user.telegram}}"> User Telegram </a> </b><br>
-        <b>📌Email:</b> {{user.email}} <br>
+        <h2> Contact Information</h2>
+        <b>📌Username:</b> {{seller.username}} <br>
+        <b>📌Phone:</b> {{seller.phone}} <br>
+        <b>📌<a href="{{seller.telegram}}"> User Telegram </a> </b><br>
+        <b>📌Email:</b> {{seller.email}} <br>
     </p>
     </div>
 
     <div id="main" class="product-list"><br>
-        <h1>List of books on sale</h1>
+        <h2>List of books on sale</h2>
 
         {% for book in book_list %}
             <div class="item">

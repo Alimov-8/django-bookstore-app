@@ -18,21 +18,21 @@ class SignupPageView(generic.CreateView):
     template_name = 'account/signup.html'
 
 
-class AccountDetailView(LoginRequiredMixin,
-                        UserPassesTestMixin,
-                        DetailView):
-    model = CustomUser
-    template_name = 'account/account_detail.html'
-    login_url = 'account_login'
+# class AccountDetailView(LoginRequiredMixin,
+#                         UserPassesTestMixin,
+#                         DetailView):
+#     model = CustomUser
+#     template_name = 'account/account_detail.html'
+#     login_url = 'account_login'
 
-    def test_func(self):
-        obj = self.get_object()
-        return obj.slug == self.request.user.slug
+#     def test_func(self):
+#         obj = self.get_object()
+#         return obj.slug == self.request.user.slug
 
-    def get_context_data(self, **kwargs):
-        context = super(AccountDetailView, self).get_context_data(**kwargs)
-        context['book_list'] = Book.objects.filter(seller=self.get_object())
-        return context
+#     def get_context_data(self, **kwargs):
+#         context = super(AccountDetailView, self).get_context_data(**kwargs)
+#         context['book_list'] = Book.objects.filter(seller=self.get_object())
+#         return context
 
 
 class AccountUpdateView(LoginRequiredMixin,
@@ -48,7 +48,7 @@ class AccountUpdateView(LoginRequiredMixin,
         return obj.slug == self.request.user.slug
 
     def get_success_url(self):
-        return reverse_lazy('account_detail',
+        return reverse_lazy('account_dashboard',
                             kwargs={'slug': self.request.user.slug})
 
 
@@ -78,4 +78,7 @@ class AccountDashboardDetailView(LoginRequiredMixin,
                         self).get_context_data(**kwargs)
         context['book_list'] = Book.objects.filter(seller=self.get_object().id,
                                                    available=True)
+        seller_slug = Book.objects.filter(seller=self.get_object().id,
+                                                   available=True).first().seller.slug
+        context['seller'] = CustomUser.objects.filter(slug=seller_slug).first()
         return context

@@ -51,11 +51,6 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'django.contrib.sites',
 
-    # Third-party
-    'crispy_forms',
-    'allauth',
-    'allauth.account',
-
     # Apps
     'accounts.apps.AccountsConfig',
     'pages.apps.PagesConfig',
@@ -64,6 +59,11 @@ INSTALLED_APPS = [
     'categories.apps.CategoriesConfig',
     'cart.apps.CartConfig',
     'orders.apps.OrdersConfig',
+    
+    # Third-party
+    'crispy_forms',
+    'allauth',
+    'allauth.account',
 ]
 
 AUTH_USER_MODEL = 'accounts.CustomUser'

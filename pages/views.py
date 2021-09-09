@@ -8,9 +8,14 @@ from books.models import Book
 from accounts.models import CustomUser
 
 # Create your views here.
-
-class HomePageView(TemplateView):
-    template_name = 'home.html'
+    
+def home(request):
+    context = dict()
+    if request.user.is_authenticated:
+        books_list = Book.objects.filter(seller=request.user)
+        context['books_list'] = books_list
+        
+    return render(request, 'home.html', context)
 
 
 class AboutPageView(TemplateView):

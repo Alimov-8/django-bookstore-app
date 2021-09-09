@@ -1,6 +1,6 @@
 from django.urls import path
 from .views import (
-     AccountDetailView,
+     # AccountDetailView,
      SignupPageView,
      AccountUpdateView,
      AccountDeleteView,
@@ -10,9 +10,9 @@ from .views import (
 urlpatterns = [
      path('signup/', SignupPageView.as_view(), name='signup'),
 
-     path('profile/<slug:slug>',
-          AccountDetailView.as_view(),
-          name='account_detail'),
+     # path('profile/<slug:slug>',
+     #      AccountDetailView.as_view(),
+     #      name='account_detail'),
 
      path('profile/<slug:slug>/update',
           AccountUpdateView.as_view(),
