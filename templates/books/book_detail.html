@@ -6,9 +6,23 @@
 
 {% block content %}
     <div class="product-detail">
-        <img src="
+        {% load thumbnail %}
+        <img style="
+                width: 400px;
+                height: 450px;
+                display: block;
+                padding: 4px;
+                margin-bottom: 20px;
+                line-height: 1.42857143;
+                background-color: #fff;
+                border: 1px solid #ddd;
+                border-radius: 4px;
+                -webkit-transition: border .2s ease-in-out;
+                -o-transition: border .2s ease-in-out;
+                transition: border .2s ease-in-out;"   
+        src="
             {% if book.cover %}
-                {{ book.cover.url }}
+                {% thumbnail book.cover 300x0 quality=85  %}
             {% else %}
                 {% static 'images/no_image.png' %}
             {% endif %}">

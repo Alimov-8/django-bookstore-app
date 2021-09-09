@@ -64,6 +64,7 @@ INSTALLED_APPS = [
     'crispy_forms',
     'allauth',
     'allauth.account',
+    'easy_thumbnails',
 ]
 
 AUTH_USER_MODEL = 'accounts.CustomUser'

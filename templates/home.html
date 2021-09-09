@@ -55,9 +55,23 @@
 
         {% for book in books_list %}
             <div class="item">
-                <a href="{{ book.get_absolute_url }}">
-                    <img src="{% if book.cover %}{{ book.cover.url }}{% else %}{% static 'images/no_image.png' %}{% endif %}">
-                </a>
+                {% load thumbnail %}
+                    <a href="{{ book.get_absolute_url }}">
+                        <img style="
+                                width: 100%;
+                                height: 240px;
+                                display: block;
+                                padding: 4px;
+                                margin-bottom: 20px;
+                                line-height: 1.42857143;
+                                background-color: #fff;
+                                border: 1px solid #ddd;
+                                border-radius: 4px;
+                                -webkit-transition: border .2s ease-in-out;
+                                -o-transition: border .2s ease-in-out;
+                                transition: border .2s ease-in-out;"  
+                            src="{% if book.cover %}{% thumbnail book.cover 300x0 quality=85  %}{% else %}{% static 'images/no_image.png' %}{% endif %}">
+                    </a>
                 <a href="{{ book.get_absolute_url }}">{{ book.title }}</a>
                 <br>
                 ${{ book.price }}
@@ -77,6 +91,5 @@
     <p><a href="{% url 'account_login' %}">Log In</a> |
     <a href="{% url 'account_signup' %}">Sign Up</a></p>
 {% endif %}
-    
-    
+
 {% endblock content %}
