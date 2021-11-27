@@ -1,8 +1,10 @@
-# django-bookstore-app 
-### 📚 Production websites with Python & Django (WILLIAM S. VINCENT) 
+# Online Bookstore System
+#### https://8soft.pythonanywhere.com/about/
+#### Production websites with Python and Django by WILLIAM S. VINCENT 📚
 #
-  ##### ✏️ Topics:
-    # Could apply to almost any new project
+  ### Development Process
+ Could apply to almost any new project
+ 
     📌 Docker & Postgresql with Django
     📌 Custom User Model
     📌 Unit Tests
@@ -12,7 +14,8 @@
     📌 Environment Variables
     📌 Email Services 
     
-    # Building out the Bookstore site itself
+ Building out the Bookstore site itself
+ 
     📌 Books App
     📌 Reviews App
     📌 File/Image Uploads
